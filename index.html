@@ -438,7 +438,7 @@
       return () => clearTimeout(t);
     }, [activeSeries]);
 
-    const filtered   = CHARACTERS.filter(c => c.series === activeSeries);
+    const filtered   = CHARACTERS.filter(c => c.series === activeSeries).sort((a,b) => parseInt(a.id) - parseInt(b.id));
     const seriesData = SERIES[activeSeries];
 
     return (
